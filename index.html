@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .finalAns{
+            height: 400px;
+            width: 200px;
+            text-align: center;
+            font-size: 100px;
+            background-color: antiquewhite;
+        }
+    </style>
+</head>
+<body>
+    <script>
+ async function runfunction(){
+            const a = document.querySelector("#firstnumber").value;
+            const b = document.querySelector("#secondnumber").value;
+            console.log("hello");
+            const res = await fetch("https://fcf4d278-38f3-44c8-ab37-d5611290377d-00-20mnadti5sxzt.sisko.replit.dev/sum-server/?a=238&b=10");
+            const ans = await res.text();
+            const fAns = document.querySelector("#final_sum");
+            fAns.innerHTML = ans;
+            fAns.classList.add("finalAns");
+        }
+    </script>
+    <input type="text" id = "firstnumber" placeholder="Enter 1st number"></input>
+    <input type="text" id = "secondnumber" placeholder="Enter 2nd number"></input>
+    <button onclick="runfunction()">Calculate sum</button>
+    <div id ="final_sum"></div>
+</body>
+</html>
